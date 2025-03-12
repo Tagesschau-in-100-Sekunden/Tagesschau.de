@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tagesschau - News</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #004d88;
+        padding: 20px 0;
+        text-align: center;
+        color: white;
+      }
+      header img {
+        width: 180px;
+      }
+      nav {
+        background-color: #003366;
+        padding: 10px 0;
+        text-align: center;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      main {
+        background-color: white;
+        padding: 20px;
+        max-width: 1000px;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #004d88;
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      .news-article {
+        margin-bottom: 30px;
+      }
+      .news-article h2 {
+        font-size: 1.8rem;
+        color: #333;
+      }
+      .news-article p {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.6;
+      }
+      .news-article img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+      }
+      footer {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        font-size: 0.9rem;
+        color: #333;
+      }
+      footer a {
+        color: #004d88;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      .alert {
+        background-color: #ff4500;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      /* Pop-up style */
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        max-width: 500px;
+        z-index: 1000;
+        text-align: center;
+      }
+      .popup h2 {
+        color: #ff4500;
+      }
+      .popup button {
+        background-color: #004d88;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+      .popup button:hover {
+        background-color: #003366;
+      }
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://images.tagesschau.de/image/559ce6ba-91f3-495c-b36d-77115c440dd0/AAABj9zUSTM/AAABkZLhkrw/16x9-1280/sendungslogo-tsh-100.jpg"
+        alt="Tagesschau Logo"
+      />
+    </header>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="https://www.tagesschau.de/politik/">Politik</a>
+      <a href="https://www.tagesschau.de/wirtschaft/">Wirtschaft</a>
+      <a href="https://www.tagesschau.de/sport/">Sport</a>
+      <a href="https://www.tagesschau.de/wetter/">Wetter</a>
+    </nav>
+
+    <main>
+      <h1>Breaking News</h1>
+
+      <!-- Pop-up for Strike Alert -->
+      <div class="overlay" id="overlay"></div>
+      <div class="popup" id="popup">
+        <h2>Streik im öffentlichen Verkehr in Brake</h2>
+        <p>
+          Ab dem 13. März 2025 fällt der Schulunterricht in Brake für zwei
+          Monate aus, da ein Streik im öffentlichen Verkehr den Zugang zur
+          Schule unmöglich macht.
+        </p>
+        <button id="closePopup">Schließen</button>
+      </div>
+
+      <!-- News Articles -->
+      <div class="news-article">
+        <h2>Russland greift die Ukraine an</h2>
+        <p>
+          In einer dramatischen Eskalation hat Russland am 12. März 2025 seine
+          militärischen Angriffe auf die Ukraine verstärkt. Diese geopolitische
+          Krise hat zu massiven internationalen Spannungen geführt. Die
+          westliche Welt steht in Alarmbereitschaft. Bundeskanzler Olaf Scholz
+          betonte die Notwendigkeit eines gemeinsamen, entschlossenen Vorgehens
+          der EU und der NATO gegen die aggressive Außenpolitik Russlands.
+        </p>
+        <img
+          src="https://www.n-tv.de/img/incoming/crop23165719/3929119007-cImg_4_3-w1200/putintwitter.jpg"
+          alt="Putin"
+        />
+      </div>
+
+      <div class="news-article">
+        <h2>Bundesregierung verhängt neue Sanktionen</h2>
+        <p>
+          Angesichts der verschärften Situation in der Ukraine hat die
+          Bundesregierung unter der Leitung von Bundeskanzler Olaf Scholz neue
+          Sanktionen gegen Russland beschlossen. Diese Maßnahme zielt darauf ab,
+          die russische Wirtschaft zu schwächen und politischen Druck auf die
+          russische Regierung auszuüben. Außenministerin Annalena Baerbock
+          bekräftigte, dass diese Sanktionen notwendig sind, um die Aggressionen
+          Russlands zu stoppen.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Impressum:
+        <a href="https://www.tagesschau.de/impressum/"
+          >Impressum der Tagesschau</a
+        >
+      </p>
+    </footer>
+
+    <!-- Warnsound Audio -->
+    <audio
+      id="warnSound"
+      src="https://www.soundjay.com/button/beep-07.wav"
+      loop
+      autoplay
+    >
+      Dein Browser unterstützt das Audio-Tag nicht.
+    </audio>
+
+    <script>
+      // Show the popup for the strike alert
+      window.onload = function () {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("popup").style.display = "block";
+      };
+
+      // Close the popup when the button is clicked
+      document
+        .getElementById("closePopup")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+          document.getElementById("popup").style.display = "none";
+          document.getElementById("warnSound").pause(); // Stop the sound when closing popup
+        });
+    </script>
+  </body>
+</html>
